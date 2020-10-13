@@ -1,0 +1,52 @@
+<div class="container-fluid bg">
+    <div class="row">
+        <div class="col-md-4 col-sm-4 col-xs-12"></div>
+        <div class="col-md-4 col-sm-4 col-xs-12 ">
+           
+            <form class="card form-conatiner" [formGroup]="addForm" (ngSubmit)="onSubmit()">
+               <h1>Add New Book</h1>
+           
+              
+               <div class="form-group">
+                <label for="ID">ID</label>
+                <input type="number" class="form-control" formControlName="ID" placeholder="ID" name="ID" class="form-control" id="ID" />
+              </div>
+              <div class="form-group ">
+                  <label for="Title">Title</label>
+                  <input type="text" class="form-control" formControlName="Title" placeholder="Title" name="Title" class="form-control" id="Title" />
+              </div>
+  
+             <div class="form-group ">
+                    <label for="PublishDate">PublishDate</label>
+                    <input type="datetime" class="form-control" formControlName="PublishDate" placeholder="PublishDate" name="PublishDate" class="form-control" id="PublishDate"  />
+              </div>
+                <div class="form-group ">
+                    <label for="PageCount">PageCount</label>
+                    <input type="number" class="form-control"  formControlName="PageCount"  placeholder="PageCount" name="PageCount" class="form-control" id="PageCount" />
+                </div>
+               
+                
+                  <div class="form-group ">
+                    <label>Description</label>
+                    <textarea type="text" class="form-control" formControlName="Description" placeholder="Description" name="Description" class="form-control" id="Description"  ></textarea>
+                </div>
+                <div class="form-group ">
+                    <label>Excerpt</label>
+                    <textarea type="text" class="form-control" formControlName="Excerpt" placeholder="Excerpt" name="Excerpt" class="form-control" id="Excerpt" ></textarea>
+                </div>
+             
+                <div class=" form-group" >
+                    <!-- <button class="btn btn-lg btn-danger btn-block text-uppercase" >Sign Up</button> -->
+                    <button type="submit" class="btn btn-info btn-block" >Save</button>
+        
+                  </div>
+                <div class=" form-group" >
+                    <a href="http://localhost:4200/booklist"><p style="text-align:center">Back To Book List</p></a>
+                 </div>
+              </form>
+              
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-12"></div>
+    </div>
+  </div>
+  

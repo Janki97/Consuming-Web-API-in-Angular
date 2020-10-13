@@ -1,0 +1,35 @@
+<div class="container-fluid">
+    <div class="table-responsive">   
+      <h2 class="text-left"><a class="btn btn-info" [routerLink]="['/addBook']" role="button">Add BooK</a></h2>
+        <table class="table" >
+            <thead  class="thead-dark">
+              <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>PublishDate</th>
+                <th>PageCount</th>
+                <th>Excerpt</th>
+                <th>Description</th>
+                <th>Edit</th>
+                <th>Delete</th>  
+              </tr>
+            </thead>
+            <tbody>
+                  <tr *ngFor="let item of bookList | paginate: { itemsPerPage: 5, currentPage: p }" >
+                      <td> {{item.ID}} </td>
+                      <td> {{item.Title}}</td>
+                      <td> {{item.PublishDate | date :'dd/mm/yyyy'}}</td>
+                      <td> {{item.PageCount}}</td>
+                      <td data-toggle="tooltip" title="{{item.Excerpt}}"> {{item.Excerpt | slice:0:10 }} .... </td>
+                      <td data-toggle="tooltip" title="{{item.Description}}">{{item.Description | slice:0:10 }}....</td>
+                      <td> <a class="btn btn-info"  (click)="editBook(item)" style="color: white;" role="button" >Edit</a> </td>
+                      <td> <a class="btn btn-danger" style="color: white;" role="button" (click)="onDelete(item)" >Delete</a> </td>
+                      ng 
+                  </tr>
+            </tbody>
+        </table>
+        <br>
+        <pagination-controls (pageChange)="p = $event" style="text-align: center;"></pagination-controls>
+       
+    </div>
+</div>
